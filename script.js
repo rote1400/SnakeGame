@@ -4,6 +4,8 @@ console.log("Snake game starting");
 const dashboard = document.getElementById('game-dashboard');
 const instructionText = document.getElementById('instruction-text')
 const logo = document.getElementById('logo');
+const scoreText = document.getElementById('score');
+const highScoreText = document.getElementById('highScore')
 console.log(dashboard);
 
 // Define game variables
@@ -11,6 +13,7 @@ const gridSize = 20;
 let snake = [{ x: 10, y: 10 }]
 let food = generateFood();
 let direction = 'down';
+let highScore = 0;
 let gameInterval;
 let gameSpeedDelay = 200;
 let gameStarted = false;
@@ -34,6 +37,7 @@ function draw() {
     dashboard.innerHTML = '';
     drawSnake();
     drawFood();
+    updateCurrentScore();
 }
 
 // Draw snake
@@ -49,10 +53,11 @@ function drawSnake() {
 
 // Draw food
 function drawFood() {
-    const foodElement = createGameElement('div', 'food');
-    
-    setPosition(foodElement, food);
-    dashboard.appendChild(foodElement);
+    if (gameStarted) {
+        const foodElement = createGameElement('div', 'food');
+        setPosition(foodElement, food);
+        dashboard.appendChild(foodElement);
+    }
 }
 
 // Testing draw function
@@ -175,9 +180,34 @@ function checkCollision() {
 }
 
 function resetSnakeGame() {
+    updateHighScore();
+    stopSnakeGame();
     snake = [{ x: 10, y: 10}];
     food = generateFood();
     direction = 'right';
     gameSpeedDelay = 200;
-    updateHighScore();
+    updateCurrentScore();
+}
+
+function updateCurrentScore() {
+    const currentScore = snake.length - 1;
+    scoreText.textContent = currentScore.toString()
+        .padStart(3, '0');
+}
+
+function updateHighScore() {
+    const currentScore = snake.length - 1;
+    if (currentScore > highScore) {
+        highScore = currentScore;
+        highScoreText.textContent = highScore.toString()
+            .padStart(3, '0');
+    }
+    highScoreText.style.display = 'block';
+}
+
+function stopSnakeGame() {
+    clearInterval(gameInterval);
+    gameStarted = false;
+    instructionText.style.display = 'block';
+    logo.style.display = 'block';
 }
