@@ -1,8 +1,80 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
     margin: 0;
     font-family: 'VT323', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body, 
+.snake {
+    background-color: #414149;
+}
+
+#game-dashboard {
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
+    display: grid;
+    border-radius: 100px;
+    margin: 5px;
+}
+
+.game-dashboard-1 {
+    border: #595f43 solid 10px;
+    border-radius: 30px;
+    box-shadow: inset 0 0 0 10px #595f43;
+}
+
+.game-dashboard-2 {
+    border: #abb78a solid 8px;
+    border-radius: 26px;
+    box-shadow: inset 0 0 0 10px #abb78a;
+}
+
+.game-dashboard-3 {
+    border: #8b966c solid 30px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 5px #8b966c;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+}
+
+#score {
+    color: #abb78a;
+}
+
+#highScore {
+    display: none;
+    color: #d8ddca;
+}
+
+#score,
+#highScore {
+    font-weight: bolder;
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+#instruction-text {
+    position: absolute;
+    top: 60%;
+    color: #333;
+    width: 300px;
+    padding: 30px;
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.game-dashboard-3,
+#logo {
+    background-color: #c4cfa3;
+}
+
+.snake {
+    border: ;
 }
