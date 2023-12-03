@@ -75,6 +75,15 @@ body,
     background-color: #c4cfa3;
 }
 
+#logo {
+    position: absolute;
+}
+
 .snake {
-    border: ;
+    border: #5a5a5a 1px dotted;
+}
+
+.food {
+    background-color: #dedede;
+    border: #999 5px solid;
 }
