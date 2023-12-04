@@ -9,8 +9,8 @@ const highScoreText = document.getElementById('highScore')
 console.log(dashboard);
 
 // Define game variables
-const gridSize = 20;
-let snake = [{ x: 10, y: 10 }]
+const gridSize = 25;
+let snake = [{ x: 12, y: 12 }]
 let food = generateFood();
 let direction = 'down';
 let highScore = 0;
@@ -182,7 +182,7 @@ function checkCollision() {
 function resetSnakeGame() {
     updateHighScore();
     stopSnakeGame();
-    snake = [{ x: 10, y: 10}];
+    snake = [{ x: 12, y: 12}];
     food = generateFood();
     direction = 'right';
     gameSpeedDelay = 200;
@@ -206,6 +206,7 @@ function updateHighScore() {
 }
 
 function stopSnakeGame() {
+    console.log("Snake game finishing..");
     clearInterval(gameInterval);
     gameStarted = false;
     instructionText.style.display = 'block';
