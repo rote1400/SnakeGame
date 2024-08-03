@@ -24,10 +24,6 @@ Welcome to the Snake Game! This classic arcade game is built using Vanilla JavaS
 - **CSS**: Styles the game elements and provides a visually appealing interface.
 - **HTML**: Uses the canvas element to draw the game graphics.
 
-## Getting Started
-
-To play the game, simply open the `index.html` file in your favorite web browser. Explore the code to understand how JavaScript, CSS, and HTML work together to create this interactive game.
-
 ## Play the Game
 
 You can check out the project and play the game on [GitHub](https://github.com/rote1400/SnakeGame). [Live Demo](https://rote1400.github.io/SnakeGame/). 
